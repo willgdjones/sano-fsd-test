@@ -1,0 +1,679 @@
+import requests
+import sys
+import json
+
+sys.path.append(".")
+
+from core.models import Studies
+
+Studies.delete().execute()
+
+url = "https://sanogenetics.com/prod/"
+#studies = requests.get(url + "/studies").json()["studies"]
+
+studies = r"""
+{
+  "studies": [
+    {
+      "client_codes": null,
+      "created_at": "2018-12-24T15:42:59+00:00",
+      "currency": "USD",
+      "custom_landing_title": "Genome Sequencing for Muscular Dystrophy Patients",
+      "description_contd": null,
+      "description_summary": "Muscular dystrophies are genetic muscle diseases that cause progressive weakening of the muscles over time. There are more than 60 different types of muscular dystrophy. The symptoms and severity of muscular dystrophy as well as the potential treatment depends very much of the genetic cause of the disorder.\n\nThis research project was initiated to allow patients with muscular dystrophy, and their families, to help accelerate research toward better symptom alleviation and treatment. ",
+      "eligibility_definition": null,
+      "eligibility_outcome_msg": null,
+      "end": "2020-06-30T14:42:00+00:00",
+      "goal": "",
+      "id": "n4Le6couFu27g9dGjpmdBF",
+      "key": "muscular-dystrophy",
+      "kit_type": null,
+      "landing_share_text": "Sano Genetics are running a research study into Muscular Dystrophy and I thought I\u2019d share it with you. Muscular Dystrophy is a genetic condition of which the main forms are estimated to affect up to 1 in every 5,000 males. This research will look to increase our understanding of Muscular Dystrophy and to help develop better treatments.",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": null,
+      "no_longer_active_exp": "We're making some changes to the Sano platform to make it easier to find research and resources related to a particular condition. A Muscular Dystrophy 'hub' page will be coming soon, and we will let you know once it is ready to explore!",
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": null,
+      "partner_visible": false,
+      "prescreen_survey": null,
+      "published": true,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": false,
+      "researcher": "Sano Genetics",
+      "researcher_email": "",
+      "researcher_image_link": "",
+      "review": false,
+      "show_funnel": false,
+      "snp_info": null,
+      "sponsor_lead": null,
+      "start": "2018-12-24T15:42:00+00:00",
+      "tags": null,
+      "title": "Muscular Dystrophy",
+      "type_of_study": "",
+      "updated_at": "2020-11-17T18:26:56.489714+00:00",
+      "uses_standard_landing_flow": false,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2019-09-17T09:13:43.256093+00:00",
+      "currency": "GBP",
+      "custom_landing_title": "",
+      "description_contd": "You will receive \u00a3100 Amazon gift card and travel reimbursement within London as a thank you for completing the study. Your personal information will not be shared with Owlstone Medical - only your gene status and results of the breath biopsy will be stored, which cannot be used to identify you.",
+      "description_summary": "1 in 25 people carry a rare genetic variant in genes called CYP2C9 or CYP2C17 that affects the way they metabolise certain proteins. You can upload your genetic data to check whether you carry the variant. As part of the study, you will have your breath tested in Owlstone's laboratory in London.",
+      "eligibility_definition": null,
+      "eligibility_outcome_msg": null,
+      "end": "2019-10-31T10:00:00+00:00",
+      "goal": "",
+      "id": "jsZVQCVHimZGLjoMTMqVRg",
+      "key": "pharmacogenomics-research-study-by-owlstone-medical",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": "http://media.sanogenetics.com/study/pharmacogenomics-research-study-by-owlstone-medical/CYP450-rare-genotype-outreach-material.pdf",
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": 400.0,
+      "partner_visible": false,
+      "prescreen_survey": null,
+      "published": true,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": true,
+      "researcher": "Owlstone Medical",
+      "researcher_email": "patrick@sanogenetics.com",
+      "researcher_image_link": "https://media.sanogenetics.com/researcher/owlstone-534.png",
+      "review": false,
+      "show_funnel": false,
+      "snp_info": [
+        "rs12248560",
+        "rs4244285",
+        "rs1799853",
+        "rs1057910"
+      ],
+      "sponsor_lead": null,
+      "start": "2019-09-19T09:00:00+00:00",
+      "tags": null,
+      "title": "Pharmacogenomics research study by Owlstone Medical",
+      "type_of_study": "",
+      "updated_at": "2020-11-17T18:26:56.496569+00:00",
+      "uses_standard_landing_flow": false,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2021-01-15T16:43:18.647892+00:00",
+      "currency": "USD",
+      "custom_landing_title": "",
+      "description_contd": "Example",
+      "description_summary": null,
+      "eligibility_definition": null,
+      "eligibility_outcome_msg": null,
+      "end": "2022-01-15T00:00:00+00:00",
+      "goal": "",
+      "id": "xuA3m4QSrvswR8Wd4Fwd3f",
+      "key": "test-study-001",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": null,
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": null,
+      "partner_visible": false,
+      "prescreen_survey": null,
+      "published": false,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": false,
+      "researcher": "Example",
+      "researcher_email": "Example@Example.com",
+      "researcher_image_link": null,
+      "review": true,
+      "show_funnel": false,
+      "snp_info": null,
+      "sponsor_lead": null,
+      "start": "2021-01-15T00:00:00+00:00",
+      "tags": [
+        "DNA data required",
+        "Sponsored",
+        "Data transferred outside Sano",
+        "Online study",
+        "Clinical Trial",
+        "Ethically approved",
+        "Study site visit necessary",
+        "Commercial study",
+        "Data stored on Sano",
+        "Paid study"
+      ],
+      "title": "test study 001",
+      "type_of_study": "referral",
+      "updated_at": "2021-01-15T16:44:58.351870+00:00",
+      "uses_standard_landing_flow": false,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2020-03-20T16:55:31.835417+00:00",
+      "currency": "USD",
+      "custom_landing_title": "",
+      "description_contd": null,
+      "description_summary": "FlywheelMS research project is a study being run by PicnicHealth and aims to combine the medical records of thousands of people with Multiple Sclerosis from across the US into a single (anonymized) research database. In return for joining the study you will get free access to the PicnicHealth platform which retrieves all of your medical records and keeps them in one convenient place, for you to see.",
+      "eligibility_definition": {
+        "children": [
+          {
+            "field": "age",
+            "op": "gt",
+            "survey": "Ji2tsd88cLUdEM45Y09zba",
+            "type": "int",
+            "value": 17
+          },
+          {
+            "field": "med_neurological",
+            "op": "sub",
+            "survey": "QcNta8WHQJLCWKeDU9saNL",
+            "type": "text",
+            "value": "multiple-sclerosis"
+          },
+          {
+            "children": [
+              {
+                "field": "location",
+                "op": "sub",
+                "survey": "Ji2tsd88cLUdEM45Y09zba",
+                "type": "text",
+                "value": "USA"
+              },
+              {
+                "field": "location",
+                "op": "sub",
+                "survey": "Ji2tsd88cLUdEM45Y09zba",
+                "type": "text",
+                "value": "United States"
+              }
+            ],
+            "type": "or"
+          }
+        ],
+        "type": "and"
+      },
+      "eligibility_outcome_msg": null,
+      "end": "2020-09-23T16:00:00+00:00",
+      "goal": "To combine the medical records of thousands of people with Multiple Sclerosis from across the US into a single (anonymized) research database",
+      "id": "dnYjU7aSWDBixntbuSTAHW",
+      "key": "multiple-sclerosis",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": {
+        "description": "Good news - You can help change the path to MS diagnosis in under 10 minutes! It looks like you may qualify for the FlywheelMS research project. In return for joining the study you will get free access to the PicnicHealth platform which retrieves all of your medical records and keeps them in one convenient place, for you to see.",
+        "link": "https://flywheel.ms/?utm_medium=partners&utm_source=sano&utm_campaign={client_code}",
+        "title": "You may be eligible!"
+      },
+      "linkout_url_form": null,
+      "marketing_info_url": "https://media.sanogenetics.com/study/multiple-sclerosis/multiple-sclerosis-partner-outreach-material.pdf",
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": 75.0,
+      "partner_visible": true,
+      "prescreen_survey": null,
+      "published": true,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": false,
+      "researcher": "Sano Genetics",
+      "researcher_email": "research@sanogenetics.com",
+      "researcher_image_link": "test2",
+      "review": false,
+      "show_funnel": true,
+      "snp_info": [
+        "rs123"
+      ],
+      "sponsor_lead": null,
+      "start": "2020-03-20T16:50:00+00:00",
+      "tags": [
+        "Ethically approved",
+        "Commercial study",
+        "Sponsored",
+        "Online study"
+      ],
+      "title": "Flywheel MS",
+      "type_of_study": "external",
+      "updated_at": "2021-07-19T15:36:39.253073+00:00",
+      "uses_standard_landing_flow": true,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2019-01-21T09:56:30+00:00",
+      "currency": "USD",
+      "custom_landing_title": "",
+      "description_contd": null,
+      "description_summary": "Genetics plays an important role in skin conditions such as psoriasis and eczema. This research project is combining genetic data with self-reported health data to improve our understanding of the causes and potential treatments of common skin conditions.",
+      "eligibility_definition": null,
+      "eligibility_outcome_msg": null,
+      "end": "2019-11-30T09:56:00+00:00",
+      "goal": "",
+      "id": "9VLt7nhQMDDE3FsLFdxdYF",
+      "key": "skin-conditions",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": null,
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": null,
+      "partner_visible": false,
+      "prescreen_survey": null,
+      "published": true,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": false,
+      "researcher": "Sano Genetics",
+      "researcher_email": "",
+      "researcher_image_link": "",
+      "review": false,
+      "show_funnel": false,
+      "snp_info": null,
+      "sponsor_lead": null,
+      "start": "2019-01-21T09:56:00+00:00",
+      "tags": null,
+      "title": "Skin Conditions",
+      "type_of_study": "",
+      "updated_at": "2020-11-17T18:26:56.503013+00:00",
+      "uses_standard_landing_flow": false,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2021-04-26T08:36:18.879573+00:00",
+      "currency": "USD",
+      "custom_landing_title": "",
+      "description_contd": "<p>In order to establish if you are eligible for this study you will need to upload your DNA data so we can identify if you have one of these genetic variants. Eligible participants who complete the trial will receive payment of \u00a32,600 as well as having travel expenses reimbursed or arranged by the site on your behalf.</p>\n<p class=\"pt-3\">The trial is in London, UK and involves taking medicine by mouth for 28 days, visiting the ward approximately every four days and will also include two overnight hospital stays (each for 2 nights). Individuals will also have four short outpatient appointments after the last dose of medicine. </p>",
+      "description_summary": "Help contribute to the development of a potential new treatment for a rare disease called alpha-1-antitrypsin deficiency. The study is recruiting volunteers who have a genotype with at least one Z alpha-1-antitrypsin allele (PiXZ). ",
+      "eligibility_definition": {
+        "children": [
+          {
+            "field": "age",
+            "op": "gte",
+            "survey": "Ji2tsd88cLUdEM45Y09zba",
+            "type": "int",
+            "value": 18
+          },
+          {
+            "type": "has_dna_data"
+          },
+          {
+            "children": [
+              {
+                "field": "location",
+                "op": "sub",
+                "survey": "Ji2tsd88cLUdEM45Y09zba",
+                "type": "text",
+                "value": "UK"
+              },
+              {
+                "field": "location",
+                "op": "sub",
+                "survey": "Ji2tsd88cLUdEM45Y09zba",
+                "type": "text",
+                "value": "United Kingdom"
+              }
+            ],
+            "type": "or"
+          },
+          {
+            "children": [
+              {
+                "field": "consent",
+                "op": "eq",
+                "survey": "EKYmqNEtKND46JbYLhAXvK",
+                "type": "consent",
+                "value": "yes"
+              },
+              {
+                "field": "has_required_snps",
+                "op": "eq",
+                "survey": "EKYmqNEtKND46JbYLhAXvK",
+                "type": "consent",
+                "value": "yes"
+              },
+              {
+                "field": "proceed_after_snp_results",
+                "op": "eq",
+                "survey": "EKYmqNEtKND46JbYLhAXvK",
+                "type": "text",
+                "value": "Yes"
+              },
+              {
+                "field": "contact_consent",
+                "op": "eq",
+                "survey": "EKYmqNEtKND46JbYLhAXvK",
+                "type": "text",
+                "value": "Yes"
+              }
+            ],
+            "prescreen": true,
+            "survey": "EKYmqNEtKND46JbYLhAXvK",
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      },
+      "eligibility_outcome_msg": {
+        "eligible": "<p>Your responses have been securely recorded and a member of the study team will be in touch very soon.</p>",
+        "ineligible": [
+          {
+            "message": "<p class='mt-3'> If you have questions about how your genetics might impact your health or medical care, please speak to your doctor. Please also see below for free support resources about the genetics of alpha-1-antitrypsin deficiency: </p> <ul class='mt-3'> <li class='px-0'> <span class='h-1 w-1 bg-sano-burgundy rounded-full inline-block relative' style='top: -4px;'></span> <a href='https://www.blf.org.uk/support-for-you/alpha-1-antitrypsin-deficiency/causes' target='_blank' rel='nofollow noopener noreferrer' class='text-sano-red-orange' > British Lung Foundation </a> <span class='block sano-light pl-2'> British Lung Foundation Helpline - 03000 030 555 </span> </li> <li class='px-0'> <span class='h-1 w-1 bg-sano-burgundy rounded-full inline-block relative' style='top: -4px;'></span> <a href='https://www.alpha1.org/' target='_blank' rel='nofollow noopener noreferrer' class='text-sano-red-orange'> Alpha-1 Foundation </a> </li> <li class='px-0'> <span class='h-1 w-1 bg-sano-burgundy rounded-full inline-block relative' style='top: -4px;'></span> <a href='https://gb.alpha1.news/' target='_blank' rel='nofollow noopener noreferrer' class='text-sano-red-orange'> Alpha-1 Awareness </a> </li> </ul>",
+            "visibleIf": "{has_required_snps} = 'yes'"
+          },
+          {
+            "message": "<p>Your DNA data file indicates that you do not have any copies of the Z alpha-1-antitrypsin allele (PiXZ) which is a requirement to join this study.</p><p class='mt-3'>Clinical research studies play an important role in discovering potential new treatment options. Although you were not eligible for this study, we want to say thank you for taking the first step in contributing to the advancement of scientific research.</p>",
+            "visibleIf": "{has_required_snps} = 'no'"
+          },
+          {
+            "message": "<p>Your DNA data file indicates that you do not have any copies of the Z alpha-1-antitrypsin allele (PiXZ) which is a requirement to join this study.</p><p class='mt-3'>Clinical research studies play an important role in discovering potential new treatment options. Although you were not eligible for this study, we want to say thank you for taking the first step in contributing to the advancement of scientific research.</p>",
+            "visibleIf": "{has_required_snps} = 'data_missing_snp_values'"
+          },
+          {
+            "message": "<p>Clinical research studies play an important role in discovering potential new treatment options. Although you were not eligible for this study, we want to say thank you for taking the first step in contributing to the advancement of scientific research.</p>",
+            "visibleIf": "{has_required_snps} <> 'yes' [and] {has_required_snps} <> 'no' [and] {has_required_snps} <> 'data_missing_snp_values'"
+          }
+        ]
+      },
+      "end": "2021-08-31T00:00:00+00:00",
+      "goal": "To contribute to the development of a potential new treatment for a rare disease called alpha-1-antitrypsin deficiency",
+      "id": "Qc2Q75PCiatuemN8JdMtsZ",
+      "key": "zf874",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": "https://media.sanogenetics.com/study/z-factor/Z-Factor_Partner_Marketing_Materials.pdf",
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": null,
+      "partner_revenue": null,
+      "partner_visible": true,
+      "prescreen_survey": "EKYmqNEtKND46JbYLhAXvK",
+      "published": false,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": true,
+      "researcher": "",
+      "researcher_email": "",
+      "researcher_image_link": null,
+      "review": false,
+      "show_funnel": true,
+      "snp_info": [
+        "rs17580",
+        "rs28929474"
+      ],
+      "sponsor_lead": null,
+      "start": "2021-05-01T00:00:00+00:00",
+      "tags": [
+        "Sponsored",
+        "Ethically approved",
+        "Commercial study",
+        "Study site visit necessary",
+        "Data transferred outside Sano",
+        "Clinical Trial",
+        "DNA data required"
+      ],
+      "title": "ZF874 Clinical Trial",
+      "type_of_study": "referral",
+      "updated_at": "2021-08-10T14:07:27.731590+00:00",
+      "uses_standard_landing_flow": true,
+      "visible": true
+    },
+    {
+      "client_codes": null,
+      "created_at": "2020-10-29T15:17:45.105009+00:00",
+      "currency": "GBP",
+      "custom_landing_title": "See if you're eligible for the MAESTRO study",
+      "description_contd": null,
+      "description_summary": "It's estimated that around 25% of people worldwide are living with some form of non-alcoholic fatty liver disease (NAFLD). This study gives people living with a more advanced form of the disease, non-alcoholic steatohepatitis (NASH), the opportunity to join a new research study to test a new potential treatment.",
+      "eligibility_definition": {
+        "children": [
+          {
+            "field": "med_liver_pancreas_spleen_kidney",
+            "op": "sub",
+            "survey": "QcNta8WHQJLCWKeDU9saNL",
+            "type": "text",
+            "value": "nafld-or-nash"
+          },
+          {
+            "field": "age",
+            "op": "gt",
+            "survey": "Ji2tsd88cLUdEM45Y09zba",
+            "type": "int",
+            "value": 17
+          },
+          {
+            "field": "location",
+            "op": "lt",
+            "survey": "Ji2tsd88cLUdEM45Y09zba",
+            "type": "distance",
+            "value": 300000
+          },
+          {
+            "children": [
+              {
+                "field": "is_in_drug_trial",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "child": {
+                  "field": "stage_4_fibrosis",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "Yes"
+                },
+                "type": "not"
+              },
+              {
+                "child": {
+                  "field": "willing_liver_biopsy",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "No"
+                },
+                "type": "not"
+              },
+              {
+                "child": {
+                  "field": "3_conditions_required",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "No"
+                },
+                "type": "not"
+              },
+              {
+                "field": "has_alco_liver_disease",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "has_hepatitis_b_c",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "taking_medicine_thyroid",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "child": {
+                  "field": "history_none_of_conditions",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "Yes"
+                },
+                "type": "not"
+              },
+              {
+                "child": {
+                  "field": "history_has_ascites",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "Yes"
+                },
+                "type": "not"
+              },
+              {
+                "field": "has_liver_cancer",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "has_organ_transplant",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "has_weight_surgery",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "has_cancer_5years",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "field": "3months_heartattack",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "No"
+              },
+              {
+                "child": {
+                  "field": "has_class3or4_heart",
+                  "op": "eq",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "Yes"
+                },
+                "type": "not"
+              },
+              {
+                "child": {
+                  "field": "site_selection",
+                  "op": "eq",
+                  "record": "study_site_id",
+                  "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                  "type": "text",
+                  "value": "none_of_the_above"
+                },
+                "type": "not"
+              },
+              {
+                "field": "consent",
+                "op": "eq",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "text",
+                "value": "Yes"
+              },
+              {
+                "field": "contact_number",
+                "record": "contact_number",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "answer"
+              },
+              {
+                "field": "contact_preference",
+                "record": "contact_preference",
+                "survey": "63LTzYzGWyRoPQT3pY9MTh",
+                "type": "answer"
+              }
+            ],
+            "prescreen": true,
+            "survey": "63LTzYzGWyRoPQT3pY9MTh",
+            "type": "and"
+          }
+        ],
+        "type": "and"
+      },
+      "eligibility_outcome_msg": null,
+      "end": "2021-06-07T00:00:00+00:00",
+      "goal": "",
+      "id": "xcxKFTszRRS5Ndkv2Nagwj",
+      "key": "nafld-nash-maestro",
+      "kit_type": null,
+      "landing_share_text": "",
+      "linkout_form": null,
+      "linkout_url_form": null,
+      "marketing_info_url": "https://media.sanogenetics.com/study/nafld/Sano_Genetics_NAFLD_Study.pdf",
+      "no_longer_active_exp": null,
+      "participant_revenue": null,
+      "participant_target": 25,
+      "partner_revenue": 1275.0,
+      "partner_visible": true,
+      "prescreen_survey": "63LTzYzGWyRoPQT3pY9MTh",
+      "published": false,
+      "recruiting_for": false,
+      "reminder_emails": 3,
+      "requires_dna_data": false,
+      "researcher": "",
+      "researcher_email": "",
+      "researcher_image_link": null,
+      "review": false,
+      "show_funnel": true,
+      "snp_info": null,
+      "sponsor_lead": null,
+      "start": "2020-11-26T00:00:00+00:00",
+      "tags": [
+        "Ethically approved",
+        "Study site visit necessary",
+        "Commercial study",
+        "Sponsored",
+        "Data transferred outside Sano",
+        "Clinical Trial"
+      ],
+      "title": "MAESTRO Clinical Trial",
+      "type_of_study": "referral",
+      "updated_at": "2021-04-26T14:43:38.444047+00:00",
+      "uses_standard_landing_flow": true,
+      "visible": true
+    }
+  ]
+}
+"""
+studies = json.loads(studies)['studies']
+
+for study in studies:
+    Studies.create(**study)
